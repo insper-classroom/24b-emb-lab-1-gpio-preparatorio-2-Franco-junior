@@ -32,31 +32,21 @@ int main() {
 
   while (true) {
     if (!gpio_get(BTN_PIN)) {
-      if (vermelho == 0 && roxo == 0 && azul == 0 && amarelo == 0) {
-        gpio_put(LED_PIN, 1);
-        vermelho = 1;
-      } else if (vermelho == 1 && roxo == 0 && azul == 0 && amarelo == 0) {
-        gpio_put(LED_PIN, 0);
-        sleep_ms(300);
-        gpio_put(LED_PIN2, 1);
-        vermelho = 0;
-        roxo = 1;
-      } else if (vermelho == 0 && roxo == 1 && azul == 0 && amarelo == 0) {
-        gpio_put(LED_PIN2, 0);
-        sleep_ms(300);
-        gpio_put(LED_PIN3, 1);
-        roxo = 0;
-        azul = 1;
-      } else if (vermelho == 0 && roxo == 0 && azul == 1 && amarelo == 0) {
-        gpio_put(LED_PIN3, 0);
-        sleep_ms(300);
-        gpio_put(LED_PIN4, 1);
-        azul = 0;
-        amarelo = 1;
-      } else if (vermelho == 0 && roxo == 0 && azul == 0 && amarelo == 1) {
-        gpio_put(LED_PIN4, 0);
-        amarelo = 0;
-      }
+      gpio_put(LED_PIN, 1);
+      sleep_ms(300);
+      gpio_put(LED_PIN, 0);
+      sleep_ms(300);
+      gpio_put(LED_PIN2, 1);
+      sleep_ms(300);
+      gpio_put(LED_PIN2, 0);
+      sleep_ms(300);
+      gpio_put(LED_PIN3, 1);
+      sleep_ms(300);
+      gpio_put(LED_PIN3, 0);
+      sleep_ms(300);
+      gpio_put(LED_PIN4, 1);
+      sleep_ms(300);
+      gpio_put(LED_PIN4, 0);
       sleep_ms(300);
     }
   }
