@@ -18,10 +18,12 @@ int main() {
   while (true) {
     if (!gpio_get(BTN_PIN)) {
       printf("Botao 1\n");
-      sleep_ms(300);
+      while (!gpio_get(BTN_PIN)) {
+      };
     } else if (!gpio_get(BTN_PIN2)) {
       printf("Botao 2\n");
-      sleep_ms(300);
+      while (!gpio_get(BTN_PIN2)) {
+      };
     }
   }
 }
